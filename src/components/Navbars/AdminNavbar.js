@@ -1,20 +1,3 @@
-/*!
-
-=========================================================
-* Black Dashboard React v1.2.2
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/black-dashboard-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/black-dashboard-react/blob/master/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 import React from "react";
 // nodejs library that concatenates classes
 import classNames from "classnames";
@@ -43,13 +26,14 @@ function AdminNavbar(props) {
   const [collapseOpen, setcollapseOpen] = React.useState(false);
   const [modalSearch, setmodalSearch] = React.useState(false);
   const [color, setcolor] = React.useState("navbar-transparent");
+
   React.useEffect(() => {
     window.addEventListener("resize", updateColor);
-    // Specify how to clean up after this effect:
     return function cleanup() {
       window.removeEventListener("resize", updateColor);
     };
   });
+
   // function that adds color white/transparent to the navbar on resize (this is for the collapse)
   const updateColor = () => {
     if (window.innerWidth < 993 && collapseOpen) {
@@ -58,6 +42,7 @@ function AdminNavbar(props) {
       setcolor("navbar-transparent");
     }
   };
+
   // this function opens and closes the collapse on small devices
   const toggleCollapse = () => {
     if (collapseOpen) {
@@ -67,10 +52,12 @@ function AdminNavbar(props) {
     }
     setcollapseOpen(!collapseOpen);
   };
+
   // this function is to open the Search modal
   const toggleModalSearch = () => {
     setmodalSearch(!modalSearch);
   };
+
   return (
     <>
       <Navbar className={classNames("navbar-absolute", color)} expand="lg">
@@ -88,7 +75,7 @@ function AdminNavbar(props) {
               </NavbarToggler>
             </div>
             <NavbarBrand href="#pablo" onClick={(e) => e.preventDefault()}>
-              {props.brandText}
+              Android Static Analysis Framework
             </NavbarBrand>
           </div>
           <NavbarToggler onClick={toggleCollapse}>
@@ -101,7 +88,7 @@ function AdminNavbar(props) {
               <InputGroup className="search-bar">
                 <Button color="link" onClick={toggleModalSearch}>
                   <i className="tim-icons icon-zoom-split" />
-                  <span className="d-lg-none d-md-block">Search</span>
+                  <span className="d-lg-none d-md-block">Search Framework</span>
                 </Button>
               </InputGroup>
               <UncontrolledDropdown nav>
@@ -118,27 +105,27 @@ function AdminNavbar(props) {
                 <DropdownMenu className="dropdown-navbar" right tag="ul">
                   <NavLink tag="li">
                     <DropdownItem className="nav-item">
-                      Mike John responded to your email
+                      New Static Analysis Framework Added
                     </DropdownItem>
                   </NavLink>
                   <NavLink tag="li">
                     <DropdownItem className="nav-item">
-                      You have 5 more tasks
+                      Tool Updates for MobSF and SonarQube
                     </DropdownItem>
                   </NavLink>
                   <NavLink tag="li">
                     <DropdownItem className="nav-item">
-                      Your friend Michael is in town
+                      Configuration Changes for AndroidManifest
                     </DropdownItem>
                   </NavLink>
                   <NavLink tag="li">
                     <DropdownItem className="nav-item">
-                      Another notification
+                      Vulnerability Detection Improved
                     </DropdownItem>
                   </NavLink>
                   <NavLink tag="li">
                     <DropdownItem className="nav-item">
-                      Another one
+                      New Recommendations for Secure Coding
                     </DropdownItem>
                   </NavLink>
                 </DropdownMenu>
@@ -180,7 +167,7 @@ function AdminNavbar(props) {
         toggle={toggleModalSearch}
       >
         <ModalHeader>
-          <Input placeholder="SEARCH" type="text" />
+          <Input placeholder="SEARCH VULNERABILITIES" type="text" />
           <button
             aria-label="Close"
             className="close"

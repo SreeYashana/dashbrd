@@ -1,7 +1,6 @@
 /*!
-
 =========================================================
-* Black Dashboard React v1.2.2
+* Black Dashboard React v1.2.2 - Static Analysis for Android Security
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/black-dashboard-react
@@ -33,12 +32,47 @@ import { BackgroundColorContext } from "contexts/BackgroundColorContext";
 
 var ps;
 
-function RTL(props) {
+function StaticAnalysis(props) {
   const location = useLocation();
   const mainPanelRef = React.useRef(null);
   const [sidebarOpened, setsidebarOpened] = React.useState(
     document.documentElement.className.indexOf("nav-open") !== -1
   );
+
+  // Static analysis tools: MobSF, SonarQube, Android Lint
+  const staticAnalysisTools = [
+    "MobSF",
+    "SonarQube",
+    "Android Lint",
+    "FindBugs",
+    "PMD"
+  ];
+
+  // Security guidelines for Android static analysis
+  const analysisGuidelines = {
+    preparation: {
+      gatherRequirements: "Define the scope and objectives of the static analysis process.",
+      selectTools: `Choose appropriate tools: ${staticAnalysisTools.join(", ")}`,
+    },
+    codeReview: {
+      manualReview: "Identify insecure coding practices like hardcoded credentials.",
+      automatedScan: "Use automated tools to scan the codebase for vulnerabilities.",
+    },
+    configurationAnalysis: {
+      manifestReview: "Check AndroidManifest.xml for insecure configurations.",
+      buildConfigReview: "Examine build.gradle for secure configurations.",
+    },
+    dependencyAnalysis: "Identify and evaluate third-party libraries for known vulnerabilities.",
+    reporting: {
+      documentFindings: "Prepare a report outlining vulnerabilities and their impact.",
+      prioritizeIssues: "Rank vulnerabilities based on severity.",
+    },
+    mitigation: {
+      proposeFixes: "Recommend secure coding practices and configuration changes.",
+      integrateFixes: "Work with the team to integrate fixes into the codebase.",
+    },
+  };
+
   React.useEffect(() => {
     if (navigator.platform.indexOf("Win") > -1) {
       document.documentElement.className += " perfect-scrollbar-on";
@@ -51,33 +85,27 @@ function RTL(props) {
         ps = new PerfectScrollbar(tables[i]);
       }
     }
-    // on this page, we need on the body tag the classes .rtl and .menu-on-right
     document.body.classList.add("rtl", "menu-on-right");
-    // we also need the rtl bootstrap
-    // so we add it dynamically to the head
+
     let head = document.head;
     let link = document.createElement("link");
     link.type = "text/css";
     link.rel = "stylesheet";
     link.id = "rtl-id";
-    link.href =
-      "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-rtl/3.4.0/css/bootstrap-rtl.css";
+    link.href = "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-rtl/3.4.0/css/bootstrap-rtl.css";
     head.appendChild(link);
-    // Specify how to clean up after this effect:
+
     return function cleanup() {
       if (navigator.platform.indexOf("Win") > -1) {
         ps.destroy();
         document.documentElement.classList.add("perfect-scrollbar-off");
         document.documentElement.classList.remove("perfect-scrollbar-on");
       }
-      // when we exit this page, we need to delete the classes .rtl and .menu-on-right
-      // from the body tag
       document.body.classList.remove("rtl", "menu-on-right");
-      // we also need to delete the rtl bootstrap, so it does not break the other pages
-      // that do not make use of rtl
       document.getElementById("rtl-id").remove();
     };
-  });
+  }, []);
+
   React.useEffect(() => {
     if (navigator.platform.indexOf("Win") > -1) {
       let tables = document.querySelectorAll(".table-responsive");
@@ -91,30 +119,31 @@ function RTL(props) {
       mainPanelRef.current.scrollTop = 0;
     }
   }, [location]);
-  // this function opens and closes the sidebar on small devices
+
   const toggleSidebar = () => {
     document.documentElement.classList.toggle("nav-open");
     setsidebarOpened(!sidebarOpened);
   };
+
   const getRoutes = (routes) => {
     return routes.map((prop, key) => {
       if (prop.layout === "/rtl") {
-        return (
-          <Route path={prop.path} element={prop.component} key={key} exact />
-        );
+        return <Route path={prop.path} element={prop.component} key={key} exact />;
       } else {
         return null;
       }
     });
   };
+
   const getBrandText = (path) => {
     for (let i = 0; i < routes.length; i++) {
       if (location.pathname.indexOf(routes[i].layout + routes[i].path) !== -1) {
         return routes[i].name;
       }
     }
-    return "Brand";
+    return "Static Analysis Framework";
   };
+
   return (
     <>
       <BackgroundColorContext.Consumer>
@@ -126,7 +155,7 @@ function RTL(props) {
                 rtlActive
                 logo={{
                   outterLink: "https://www.creative-tim.com/",
-                  text: "الإبداعية تيم",
+                  text: "Static Analysis Framework",
                   imgSrc: logo,
                 }}
                 toggleSidebar={toggleSidebar}
@@ -138,10 +167,7 @@ function RTL(props) {
                   sidebarOpened={sidebarOpened}
                 />
                 <Routes>{getRoutes(routes)}</Routes>
-                {
-                  // we don't want the Footer to be rendered on map page
-                  location.pathname === "/admin/maps" ? null : <Footer fluid />
-                }
+                {location.pathname === "/admin/maps" ? null : <Footer fluid />}
               </div>
             </div>
             <FixedPlugin bgColor={color} handleBgClick={changeColor} />
@@ -152,4 +178,4 @@ function RTL(props) {
   );
 }
 
-export default RTL;
+export default StaticAnalysis;

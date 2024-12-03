@@ -1,14 +1,14 @@
 /*!
 
 =========================================================
-* Black Dashboard React v1.2.2
+* Android Static Analysis Framework v1.0
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/black-dashboard-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/black-dashboard-react/blob/master/LICENSE.md)
+* Product Page: https://www.yourproductpage.com
+* Copyright 2023 Yashana
+* Licensed under MIT
 
-* Coded by Creative Tim
+* Coded by Yashana
 
 =========================================================
 
@@ -20,299 +20,84 @@ import React from "react";
 // reactstrap components
 import { Card, CardHeader, CardBody, Row, Col } from "reactstrap";
 
-const MapWrapper = () => {
-  const mapRef = React.useRef(null);
+// Static Analysis Components (representing each step in the framework)
+const CodeReviewWrapper = () => {
+  const analysisRef = React.useRef(null);
   React.useEffect(() => {
-    let google = window.google;
-    let map = mapRef.current;
-    let lat = "40.748817";
-    let lng = "-73.985428";
-    const myLatlng = new google.maps.LatLng(lat, lng);
-    const mapOptions = {
-      scrollwheel: false, //we disable de scroll over the map, it is a really annoing when you scroll through page
-      styles: [
-        {
-          elementType: "geometry",
-          stylers: [
-            {
-              color: "#1d2c4d",
-            },
-          ],
-        },
-        {
-          elementType: "labels.text.fill",
-          stylers: [
-            {
-              color: "#8ec3b9",
-            },
-          ],
-        },
-        {
-          elementType: "labels.text.stroke",
-          stylers: [
-            {
-              color: "#1a3646",
-            },
-          ],
-        },
-        {
-          featureType: "administrative.country",
-          elementType: "geometry.stroke",
-          stylers: [
-            {
-              color: "#4b6878",
-            },
-          ],
-        },
-        {
-          featureType: "administrative.land_parcel",
-          elementType: "labels.text.fill",
-          stylers: [
-            {
-              color: "#64779e",
-            },
-          ],
-        },
-        {
-          featureType: "administrative.province",
-          elementType: "geometry.stroke",
-          stylers: [
-            {
-              color: "#4b6878",
-            },
-          ],
-        },
-        {
-          featureType: "landscape.man_made",
-          elementType: "geometry.stroke",
-          stylers: [
-            {
-              color: "#334e87",
-            },
-          ],
-        },
-        {
-          featureType: "landscape.natural",
-          elementType: "geometry",
-          stylers: [
-            {
-              color: "#023e58",
-            },
-          ],
-        },
-        {
-          featureType: "poi",
-          elementType: "geometry",
-          stylers: [
-            {
-              color: "#283d6a",
-            },
-          ],
-        },
-        {
-          featureType: "poi",
-          elementType: "labels.text.fill",
-          stylers: [
-            {
-              color: "#6f9ba5",
-            },
-          ],
-        },
-        {
-          featureType: "poi",
-          elementType: "labels.text.stroke",
-          stylers: [
-            {
-              color: "#1d2c4d",
-            },
-          ],
-        },
-        {
-          featureType: "poi.park",
-          elementType: "geometry.fill",
-          stylers: [
-            {
-              color: "#023e58",
-            },
-          ],
-        },
-        {
-          featureType: "poi.park",
-          elementType: "labels.text.fill",
-          stylers: [
-            {
-              color: "#3C7680",
-            },
-          ],
-        },
-        {
-          featureType: "road",
-          elementType: "geometry",
-          stylers: [
-            {
-              color: "#304a7d",
-            },
-          ],
-        },
-        {
-          featureType: "road",
-          elementType: "labels.text.fill",
-          stylers: [
-            {
-              color: "#98a5be",
-            },
-          ],
-        },
-        {
-          featureType: "road",
-          elementType: "labels.text.stroke",
-          stylers: [
-            {
-              color: "#1d2c4d",
-            },
-          ],
-        },
-        {
-          featureType: "road.highway",
-          elementType: "geometry",
-          stylers: [
-            {
-              color: "#2c6675",
-            },
-          ],
-        },
-        {
-          featureType: "road.highway",
-          elementType: "geometry.fill",
-          stylers: [
-            {
-              color: "#9d2a80",
-            },
-          ],
-        },
-        {
-          featureType: "road.highway",
-          elementType: "geometry.stroke",
-          stylers: [
-            {
-              color: "#9d2a80",
-            },
-          ],
-        },
-        {
-          featureType: "road.highway",
-          elementType: "labels.text.fill",
-          stylers: [
-            {
-              color: "#b0d5ce",
-            },
-          ],
-        },
-        {
-          featureType: "road.highway",
-          elementType: "labels.text.stroke",
-          stylers: [
-            {
-              color: "#023e58",
-            },
-          ],
-        },
-        {
-          featureType: "transit",
-          elementType: "labels.text.fill",
-          stylers: [
-            {
-              color: "#98a5be",
-            },
-          ],
-        },
-        {
-          featureType: "transit",
-          elementType: "labels.text.stroke",
-          stylers: [
-            {
-              color: "#1d2c4d",
-            },
-          ],
-        },
-        {
-          featureType: "transit.line",
-          elementType: "geometry.fill",
-          stylers: [
-            {
-              color: "#283d6a",
-            },
-          ],
-        },
-        {
-          featureType: "transit.station",
-          elementType: "geometry",
-          stylers: [
-            {
-              color: "#3a4762",
-            },
-          ],
-        },
-        {
-          featureType: "water",
-          elementType: "geometry",
-          stylers: [
-            {
-              color: "#0e1626",
-            },
-          ],
-        },
-        {
-          featureType: "water",
-          elementType: "labels.text.fill",
-          stylers: [
-            {
-              color: "#4e6d70",
-            },
-          ],
-        },
-      ],
+    // Placeholder for the static analysis tools and logic.
+    const tools = ["MobSF", "SonarQube", "Android Lint", "FindBugs", "PMD"];
+    let selectedTool = tools[0]; // Example: MobSF for mobile app security analysis
+
+    const performAnalysis = (tool) => {
+      // Simulated static analysis based on selected tool
+      console.log(`Performing static analysis with: ${tool}`);
+      // Logic for analyzing Android app code (placeholder)
     };
 
-    map = new google.maps.Map(map, mapOptions);
+    // Simulate performing analysis
+    performAnalysis(selectedTool);
 
-    const marker = new google.maps.Marker({
-      position: myLatlng,
-      map: map,
-      animation: google.maps.Animation.DROP,
-      title: "BLK Design System PRO React!",
-    });
-
-    const contentString =
-      '<div class="info-window-content"><h2>BLK Dashboard React</h2>' +
-      "<p>A freebie Admin for ReactStrap, Bootstrap, React, and React Hooks.</p></div>";
-
-    const infowindow = new google.maps.InfoWindow({
-      content: contentString,
-    });
-
-    google.maps.event.addListener(marker, "click", function () {
-      infowindow.open(map, marker);
-    });
   }, []);
-  return <div ref={mapRef} />;
+
+  return (
+    <div ref={analysisRef}>
+      {/* Placeholder for detailed static analysis result display */}
+      <p>Static analysis is being performed using selected tools...</p>
+    </div>
+  );
 };
 
-function Map() {
+const DependencyAnalysisWrapper = () => {
+  const analyzeDependencies = () => {
+    // Placeholder for analyzing third-party libraries for vulnerabilities
+    console.log("Analyzing third-party dependencies...");
+  };
+
+  React.useEffect(() => {
+    analyzeDependencies();
+  }, []);
+
+  return (
+    <div>
+      <p>Analyzing dependencies for known vulnerabilities...</p>
+    </div>
+  );
+};
+
+const ReportWrapper = () => {
+  const reportFindings = () => {
+    // Placeholder for generating report based on findings
+    console.log("Generating report based on findings...");
+  };
+
+  React.useEffect(() => {
+    reportFindings();
+  }, []);
+
+  return (
+    <div>
+      <p>Generating detailed report with vulnerability findings...</p>
+    </div>
+  );
+};
+
+function AndroidStaticAnalysis() {
   return (
     <>
       <div className="content">
         <Row>
           <Col md="12">
             <Card className="card-plain">
-              <CardHeader>Google Maps</CardHeader>
+              <CardHeader>Android Static Analysis Framework</CardHeader>
               <CardBody>
                 <div
-                  id="map"
-                  className="map"
+                  id="analysis-framework"
+                  className="analysis-framework"
                   style={{ position: "relative", overflow: "hidden" }}
                 >
-                  <MapWrapper />
+                  <CodeReviewWrapper />
+                  <DependencyAnalysisWrapper />
+                  <ReportWrapper />
                 </div>
               </CardBody>
             </Card>
@@ -323,4 +108,4 @@ function Map() {
   );
 }
 
-export default Map;
+export default AndroidStaticAnalysis;

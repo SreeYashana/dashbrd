@@ -1,19 +1,13 @@
 /*!
-
 =========================================================
 * Black Dashboard React v1.2.2
 =========================================================
-
 * Product Page: https://www.creative-tim.com/product/black-dashboard-react
 * Copyright 2023 Creative Tim (https://www.creative-tim.com)
 * Licensed under MIT (https://github.com/creativetimofficial/black-dashboard-react/blob/master/LICENSE.md)
-
 * Coded by Creative Tim
-
 =========================================================
-
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
 */
 /*eslint-disable*/
 import React from "react";
@@ -33,7 +27,7 @@ import {
 
 var ps;
 
-function Sidebar(props) {
+function SecurityAnalysisSidebar(props) {
   const location = useLocation();
   const sidebarRef = React.useRef(null);
   // verifies if routeName is the one active (in browser input)
@@ -146,6 +140,10 @@ function Sidebar(props) {
                 </ReactstrapNavLink>
               </li>
             </Nav>
+            <div className="sidebar-footer">
+              <p>Security Analysis Framework</p>
+              <p>Early detection of vulnerabilities to ensure app integrity.</p>
+            </div>
           </div>
         </div>
       )}
@@ -153,9 +151,9 @@ function Sidebar(props) {
   );
 }
 
-Sidebar.propTypes = {
+SecurityAnalysisSidebar.propTypes = {
   // if true, then instead of the routes[i].name, routes[i].rtlName will be rendered
-  // insde the links of this component
+  // inside the links of this component
   rtlActive: PropTypes.bool,
   routes: PropTypes.arrayOf(PropTypes.object),
   logo: PropTypes.shape({
@@ -172,4 +170,4 @@ Sidebar.propTypes = {
   }),
 };
 
-export default Sidebar;
+export default SecurityAnalysisSidebar;

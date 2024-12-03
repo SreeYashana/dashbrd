@@ -81,18 +81,7 @@ let chartExample1 = {
 
     return {
       labels: [
-        "JAN",
-        "FEB",
-        "MAR",
-        "APR",
-        "MAY",
-        "JUN",
-        "JUL",
-        "AUG",
-        "SEP",
-        "OCT",
-        "NOV",
-        "DEC",
+        "Malware check", "Mobsf", "Sonarqube", "Bugs", "Dection","Malware check", "Mobsf", "Sonarqube", "Bugs", "Dection"
       ],
       datasets: [
         {
@@ -126,18 +115,7 @@ let chartExample1 = {
 
     return {
       labels: [
-        "JAN",
-        "FEB",
-        "MAR",
-        "APR",
-        "MAY",
-        "JUN",
-        "JUL",
-        "AUG",
-        "SEP",
-        "OCT",
-        "NOV",
-        "DEC",
+       "Malware check", "Mobsf", "Sonarqube", "Bugs", "Dection" ,"Malware check", "Mobsf", "Sonarqube", "Bugs", "Dection"
       ],
       datasets: [
         {
@@ -171,18 +149,7 @@ let chartExample1 = {
 
     return {
       labels: [
-        "JAN",
-        "FEB",
-        "MAR",
-        "APR",
-        "MAY",
-        "JUN",
-        "JUL",
-        "AUG",
-        "SEP",
-        "OCT",
-        "NOV",
-        "DEC",
+        "Malware check", "Mobsf", "Sonarqube", "Bugs", "Dection"
       ],
       datasets: [
         {
@@ -222,7 +189,7 @@ let chartExample2 = {
     gradientStroke.addColorStop(0, "rgba(29,140,248,0)"); //blue colors
 
     return {
-      labels: ["JUL", "AUG", "SEP", "OCT", "NOV", "DEC"],
+      labels: ["Malware check", "Mobsf", "Sonarqube", "Bugs", "Dection"],
       datasets: [
         {
           label: "Data",
@@ -261,10 +228,10 @@ let chartExample3 = {
     gradientStroke.addColorStop(0, "rgba(119,52,169,0)"); //purple colors
 
     return {
-      labels: ["USA", "GER", "AUS", "UK", "RO", "BR"],
+      labels: ["Malware check", "Mobsf", "Sonarqube", "Bugs", "Dection"],
       datasets: [
         {
-          label: "Countries",
+          label: "Mobsf",
           fill: true,
           backgroundColor: gradientStroke,
           hoverBackgroundColor: gradientStroke,
@@ -336,10 +303,10 @@ const chartExample4 = {
     gradientStroke.addColorStop(0, "rgba(66,134,121,0)"); //green colors
 
     return {
-      labels: ["JUL", "AUG", "SEP", "OCT", "NOV"],
+      labels: ["Malware check", "Mobsf", "Sonarqube", "Bugs", "Dection"],
       datasets: [
         {
-          label: "My First dataset",
+          label: "Vunlabitles",
           fill: true,
           backgroundColor: gradientStroke,
           borderColor: "#00d6b4",

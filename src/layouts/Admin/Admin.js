@@ -1,19 +1,13 @@
 /*!
-
 =========================================================
-* Black Dashboard React v1.2.2
+* Android Static Analysis Framework Dashboard
 =========================================================
-
-* Product Page: https://www.creative-tim.com/product/black-dashboard-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/black-dashboard-react/blob/master/LICENSE.md)
-
-* Coded by Creative Tim
-
+* Product Page: https://www.spillscope.com/product-page
+* Copyright 2023 Spill Scope (https://www.spillscope.com)
+* Licensed under MIT (https://github.com/spillscope/android-static-analysis-framework/LICENSE.md)
+* Coded by Spill Scope
 =========================================================
-
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
 */
 import React from "react";
 import { Route, Routes, Navigate, useLocation } from "react-router-dom";
@@ -28,7 +22,8 @@ import FixedPlugin from "components/FixedPlugin/FixedPlugin.js";
 
 import routes from "routes.js";
 
-import logo from "assets/img/react-logo.png";
+// Replace the logo import with your brand's logo
+import logo from "assets/img/anime6.png";  // Change to the actual path for the Spill Scope logo
 import { BackgroundColorContext } from "contexts/BackgroundColorContext";
 
 var ps;
@@ -95,7 +90,7 @@ function Admin(props) {
         return routes[i].name;
       }
     }
-    return "Brand";
+    return "Spill Scope Dashboard";  // Updated brand text
   };
   return (
     <BackgroundColorContext.Consumer>
@@ -105,9 +100,9 @@ function Admin(props) {
             <Sidebar
               routes={routes}
               logo={{
-                outterLink: "https://www.creative-tim.com/",
-                text: "Creative Tim",
-                imgSrc: logo,
+                outterLink: "https://www.spillscope.com/",  // Updated link to Spill Scope's website
+                text: "Spill Scope",  // Updated name to Spill Scope
+                imgSrc: logo,  // Updated to Spill Scope logo
               }}
               toggleSidebar={toggleSidebar}
             />

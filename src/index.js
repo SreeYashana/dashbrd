@@ -1,7 +1,6 @@
 /*!
-
 =========================================================
-* Black Dashboard React v1.2.2
+* Black Dashboard React v1.2.2 - Static Analysis for Android Security
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/black-dashboard-react
@@ -19,6 +18,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 
+// import StaticAnalysisLayout from "layouts/StaticAnalysis/StaticAnalysis.js"; // Layout for Static Analysis
 import AdminLayout from "layouts/Admin/Admin.js";
 import RTLLayout from "layouts/RTL/RTL.js";
 
@@ -39,6 +39,7 @@ root.render(
         <Routes>
           <Route path="/admin/*" element={<AdminLayout />} />
           <Route path="/rtl/*" element={<RTLLayout />} />
+          {/* <Route path="/static-analysis/*" element={<StaticAnalysisLayout />} /> New route for Static Analysis */}
           <Route
             path="*"
             element={<Navigate to="/admin/dashboard" replace />}
