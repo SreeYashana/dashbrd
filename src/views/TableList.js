@@ -14,13 +14,16 @@ import {
   Button,
 } from "reactstrap";
 
-function Tables() {
-  const [tableData, setTableData] = useState([
-    { tool: "MobSF", type: "Static Analysis", issue: "Insecure Configurations", status: "Detected" },
-    { tool: "SonarQube", type: "Code Quality", issue: "Code Smells", status: "Mitigated" },
-    { tool: "AndroBugs", type: "Vulnerability Scanner", issue: "Hardcoded Keys", status: "In Progress" },
-    { tool: "QARK", type: "Static Analysis", issue: "Excessive Permissions", status: "Detected" },
-  ]);
+function Tables({ jsonReport }) {
+  // Extract data from the JSON report for initial table population
+  const initialTableData = jsonReport.manifest_analysis.manifest_findings.map((finding) => ({
+    tool: "MobSF",
+    type: "Manifest Analysis",
+    issue: finding.name,
+    status: finding.severity.charAt(0).toUpperCase() + finding.severity.slice(1),
+  }));
+
+  const [tableData, setTableData] = useState(initialTableData);
 
   const [newRow, setNewRow] = useState({
     tool: "",

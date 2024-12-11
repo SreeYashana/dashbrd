@@ -1,20 +1,15 @@
 /*!
-
 =========================================================
 * Black Dashboard React v1.2.2
 =========================================================
-
 * Product Page: https://www.creative-tim.com/product/black-dashboard-react
 * Copyright 2023 Creative Tim (https://www.creative-tim.com)
 * Licensed under MIT (https://github.com/creativetimofficial/black-dashboard-react/blob/master/LICENSE.md)
-
 * Coded by Creative Tim
-
 =========================================================
-
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
 */
+
 // ##############################
 // // // Chart variables
 // #############################
@@ -74,15 +69,12 @@ let chartExample1 = {
     let ctx = canvas.getContext("2d");
 
     let gradientStroke = ctx.createLinearGradient(0, 230, 0, 50);
-
     gradientStroke.addColorStop(1, "rgba(29,140,248,0.2)");
     gradientStroke.addColorStop(0.4, "rgba(29,140,248,0.0)");
-    gradientStroke.addColorStop(0, "rgba(29,140,248,0)"); //blue colors
+    gradientStroke.addColorStop(0, "rgba(29,140,248,0)");
 
     return {
-      labels: [
-        "Malware check", "Mobsf", "Sonarqube", "Bugs", "Dection","Malware check", "Mobsf", "Sonarqube", "Bugs", "Dection"
-      ],
+      labels: ["Malware Check", "API Analysis", "Static Analysis", "Bug Tracking", "Detection", "Malware Check", "API Analysis", "Static Analysis", "Bug Tracking", "Detection"],
       datasets: [
         {
           label: "My First dataset",
@@ -108,15 +100,12 @@ let chartExample1 = {
     let ctx = canvas.getContext("2d");
 
     let gradientStroke = ctx.createLinearGradient(0, 230, 0, 50);
-
     gradientStroke.addColorStop(1, "rgba(29,140,248,0.2)");
     gradientStroke.addColorStop(0.4, "rgba(29,140,248,0.0)");
-    gradientStroke.addColorStop(0, "rgba(29,140,248,0)"); //blue colors
+    gradientStroke.addColorStop(0, "rgba(29,140,248,0)");
 
     return {
-      labels: [
-       "Malware check", "Mobsf", "Sonarqube", "Bugs", "Dection" ,"Malware check", "Mobsf", "Sonarqube", "Bugs", "Dection"
-      ],
+      labels: ["Malware Check", "API Analysis", "Static Analysis", "Bug Tracking", "Detection"],
       datasets: [
         {
           label: "My First dataset",
@@ -142,15 +131,12 @@ let chartExample1 = {
     let ctx = canvas.getContext("2d");
 
     let gradientStroke = ctx.createLinearGradient(0, 230, 0, 50);
-
     gradientStroke.addColorStop(1, "rgba(29,140,248,0.2)");
     gradientStroke.addColorStop(0.4, "rgba(29,140,248,0.0)");
-    gradientStroke.addColorStop(0, "rgba(29,140,248,0)"); //blue colors
+    gradientStroke.addColorStop(0, "rgba(29,140,248,0)");
 
     return {
-      labels: [
-        "Malware check", "Mobsf", "Sonarqube", "Bugs", "Dection"
-      ],
+      labels: ["Malware Check", "API Analysis", "Static Analysis", "Bug Tracking", "Detection"],
       datasets: [
         {
           label: "My First dataset",
@@ -183,13 +169,12 @@ let chartExample2 = {
     let ctx = canvas.getContext("2d");
 
     let gradientStroke = ctx.createLinearGradient(0, 230, 0, 50);
-
     gradientStroke.addColorStop(1, "rgba(29,140,248,0.2)");
     gradientStroke.addColorStop(0.4, "rgba(29,140,248,0.0)");
-    gradientStroke.addColorStop(0, "rgba(29,140,248,0)"); //blue colors
+    gradientStroke.addColorStop(0, "rgba(29,140,248,0)");
 
     return {
-      labels: ["Malware check", "Mobsf", "Sonarqube", "Bugs", "Dection"],
+      labels: ["Malware Check", "API Analysis", "Static Analysis", "Bug Tracking", "Detection"],
       datasets: [
         {
           label: "Data",
@@ -222,13 +207,12 @@ let chartExample3 = {
     let ctx = canvas.getContext("2d");
 
     let gradientStroke = ctx.createLinearGradient(0, 230, 0, 50);
-
     gradientStroke.addColorStop(1, "rgba(72,72,176,0.1)");
     gradientStroke.addColorStop(0.4, "rgba(72,72,176,0.0)");
-    gradientStroke.addColorStop(0, "rgba(119,52,169,0)"); //purple colors
+    gradientStroke.addColorStop(0, "rgba(119,52,169,0)");
 
     return {
-      labels: ["Malware check", "Mobsf", "Sonarqube", "Bugs", "Dection"],
+      labels: ["Malware Check", "API Analysis", "Static Analysis", "Bug Tracking", "Detection"],
       datasets: [
         {
           label: "Mobsf",
@@ -297,16 +281,14 @@ const chartExample4 = {
     let ctx = canvas.getContext("2d");
 
     let gradientStroke = ctx.createLinearGradient(0, 230, 0, 50);
-
     gradientStroke.addColorStop(1, "rgba(66,134,121,0.15)");
-    gradientStroke.addColorStop(0.4, "rgba(66,134,121,0.0)"); //green colors
-    gradientStroke.addColorStop(0, "rgba(66,134,121,0)"); //green colors
+    gradientStroke.addColorStop(0.4, "rgba(66,134,121,0.0)");
 
     return {
-      labels: ["Malware check", "Mobsf", "Sonarqube", "Bugs", "Dection"],
+      labels: ["Malware Check", "API Analysis", "Static Analysis", "Bug Tracking", "Detection"],
       datasets: [
         {
-          label: "Vunlabitles",
+          label: "Vulnerabilities",
           fill: true,
           backgroundColor: gradientStroke,
           borderColor: "#00d6b4",
@@ -330,7 +312,6 @@ const chartExample4 = {
     legend: {
       display: false,
     },
-
     tooltips: {
       backgroundColor: "#f5f5f5",
       titleFontColor: "#333",
